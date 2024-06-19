@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+    <style>
+        .logo{
+            color: white;
+            padding-left: 30px;
+            font-family: "Do Hyeon", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 40px;
+        }
+        #container{
+            width: 75%;
+            margin: 0px auto;
+            text-align: center;
+            border-left: 1px solid black;
+            border-right: 1px solid black;
+            border-bottom: 1px solid black;
+            height: 200px;
+            position: relative;
+        }
+        #box5{
+            position: absolute;
+            top: 350px;
+            right: 150px;
+            width: 700px;
+        }
+        #create{
+            
+            background-color: rgb(255, 225, 0);
+            color: black;
+            border: 1px solid black;
+            border-radius: 5px;
+            width: 90px;
+            height: 50px;
+        }
+        #create:hover{background-color: rgb(232, 205, 0);}
+        #create:active{background-color: rgb(211, 187, 4);}
+        #box{
+            position: relative;
+            text-align: center;
+            display: flex;
+            flex-direction: row;
+            width: 500px;
+            display: none;
+        }
+        #box p{
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            font-size:26px;
+            border-radius: 100%;
+            position: absolute;
+            top: 10px;
+            border: 1px solid black;
+        }
+        #one{
+            background-color: rgb(255, 225, 0);
+            left: 350px;
+        }
+        #two{
+            background-color: rgb(255, 225, 0);
+            left: 420px;
+        }
+        #three{
+            background-color: lightblue;
+            left: 490px;
+        }
+        #forth{
+            background-color: red;
+            left: 560px;
+        }
+        #five{
+            background-color: rgb(111, 111, 111);
+            left: 630px;
+        }
+        #six{
+            background-color: rgb(112, 112, 112);
+            left: 700px;
+        }
+        #bonus{
+            background-color: red;
+            top: 10px;
+            left: 840px;
+        }
+        #img{
+            position: absolute;
+            top: 45px;
+            left: 782px;
+        }
+        #counter{
+            width: 500px;
+            position: absolute;
+            left: 250px;
+        }
+        nav{
+            color: rgb(0, 0, 0);
+            width: 100%;
+            height: 60px;
+            background-color: rgb(255, 225, 0);
+            display: flex;
+            align-items: center;
+        }
+        ul li{
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+        #ul1{font-size: 20px;}
+        #ul1{
+            padding-left: 10px;
+        }
+        a{text-decoration-line: none; color: white;}
+        #ul2 {
+            margin-left: 680px;
+            display: flex;
+            justify-content: end;
+        }
+
+        #list{
+            display: flex;
+            text-decoration-line: none;
+            color: white;
+            background-color: rgb(17, 17, 17);
+            border: 1px solid black;
+            padding: 10px;
+            border-radius: 10px;
+            margin-left: 10px;
+        }
+        a:hover{text-decoration-line: underline;}
+        #section{width: 75%; margin: 0px auto;}
+        #history{
+            font-size: 25px;
+            width: 400px;
+            height: 40px;
+            background-color: rgb(231, 231, 231);
+            text-align: center;
+            border-radius: 10px;
+            border: 1px solid black;
+        }
+        #inputbox{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+        #inputbox input{
+            width: 60px;
+            font-size: 30px;
+        }
+        #numberbox{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+        #numberbox p{width:60px;}
+    </style>
+</head>
+<body>
+    <nav>
+        <p class="logo">번호 추첨기!!</p>
+        <ul id="ul1">
+            <li><p>로또 번호 뽑기</p></li>
+        </ul>
+        
+        <ul id="ul2">
+            <li id="list"><a onclick="re()">로그아웃</a></li>
+            <li id="list" onclick="win()"><a href="#">어떤날??</a></li>
+            <li id="list"><a href="상점.html">exp : </a><span id="exp">0</span></li>
+            <li><button onclick="point()">확인하기</button></li>
+        </ul>
+    </nav>
+    <section id="container">
+        
+        <p>아래의 버튼을 눌러서 번호를 추첨하세요~</p>
+        <button id="create" onclick="create()" >번호 생성하기</button>
+        <div id="box">
+            <h3 style="color: black; font-size: 12px;" id="counter">0</h3>
+                <p id="one">0</p>
+                <p id="two">0</p>
+                <p id="three">0</p>
+                <p id="forth">0</p>
+                <p id="five">0</p>
+                <p id="six">0</p>
+            <div>
+                <img src="plus-1727487_1280.png" width="8%" id="img">
+            </div>
+            <p id="bonus"></p>
+        </div>
+    </section>
+    <section id="section">
+        <h2 id="newdate"></h2>
+        <h1>내역 확인하기</h1>
+    </section>
+    <section id="box5">
+        <div id="numberbox">
+            <p>첫번째</p>
+            <p>두번째</p>
+            <p>세번째</p>
+            <p>네번째</p>
+            <p>다섯번째</p>
+            <p>여섯번째</p>
+        </div>
+        <div id="inputbox">
+            <input type="text" id="num1">
+            <input type="text" id="num2">
+            <input type="text" id="num3">
+            <input type="text" id="num4">
+            <input type="text" id="num5">
+            <input type="text" id="num6">
+        </div>
+        <input style="margin: 20px 10px;" type="button" value="확인" onclick="create()">
+    </section>
+    <script>
+        let today = new Date();
+        let month = today.getMonth()+1;
+        let date = today.getDate();
+        let hours = today.getHours();
+        document.querySelector('#newdate').innerHTML = "오늘의 날짜 : "+ month +"."+date;
+       
+        let exppoint = 0;
+        
+        function check(){
+            let num1=document.querySelector('#num1').value;
+            let num2=document.querySelector('#num2').value;
+            let num3=document.querySelector('#num3').value;
+            let num4=document.querySelector('#num4').value;
+            let num5=document.querySelector('#num5').value;
+            let num6=document.querySelector('#num6').value;
+            let expplus=0;
+            if(!num1){
+                alert('값이 없습니다');
+                return 0;
+            }
+            else if(!num2){
+                alert('값이 없습니다');
+                return 0;
+            }
+            else if(!num3){
+                alert('값이 없습니다');
+                return 0;
+            }
+            else if(!num4){
+                alert('값이 없습니다');
+                return 0;
+            }
+            else if(!num5){
+                alert('값이 없습니다');
+                return 0;
+            }
+            else if(!num6){
+                alert('값이 없습니다');
+                return 0;
+            }
+            
+            for(var i=0; i<6; i++){
+                if(num1 == ddd[i]){
+                    expplus+=5;
+                }
+                if(num2 == ddd[i]){
+                    expplus+=5;
+                }
+                if(num3 == ddd[i]){
+                    expplus+=5;
+                }
+                if(num4 == ddd[i]){
+                    expplus+=5;
+                }
+                if(num5 == ddd[i]){
+                    expplus+=5;
+                }
+                if(num6 == ddd[i]){
+                    expplus+=5;
+                }
+            }
+            exppoint+=expplus;
+            alert('얻으신 exp는 '+expplus+'입니다.');
+
+        }
+        function win(){
+            let sum = month + date;
+            if(sum%5==0){
+                alert('오늘은 럭키한 날이네요 ㅎㅎ 기분좋은 마음으로 출근해보아요(exp+5)');
+                exppoint= exppoint+5;
+            }
+            else {
+                alert("오늘은 안타깝게도 아니에요 그래도 기분좋은 마음으로 출근해보아요");
+            }
+        }
+        function point(){
+            document.querySelector('#exp').innerHTML = exppoint;
+        }
+        function re(){
+            if(confirm("로그아웃 하시겠습니까?")){
+                location.href = "로그인.html";
+            }
+        }
+        alert("환영합니다");
+        let counter = document.querySelector('#counter');
+        let number = 0;
+
+        let lottonum;
+        
+        function lotto(){
+            let lotto = [];
+            let i=0; 
+            while(i<7){
+                let ran10 = getRandomInt(1, 45);
+                let n = ran10;
+                if(sameNum(ran10)){
+                    lotto.push(n);
+                    i++;
+                }
+            }
+            function sameNum (n) {
+                for (var i = 0; i < lotto.length; i++)
+                {      if (n === lotto[i]) 
+                        {        
+                            return false;
+                      }
+                }    
+                return true;
+            }
+            return lotto;
+        }
+        let m=0;
+        let ddd = [];
+        function create(){
+            
+            number = number+1;
+            document.querySelector('#box').style.display = "block";
+            const num = parseInt(counter.textContent);
+            counter.textContent = num+1 + "번째 번호 생성 완료";
+            
+            let ran= getRandomInt(1, 45);
+            
+            ddd = lotto();
+            document.querySelector('#one').innerHTML = ddd[0];
+            let ran2= getRandomInt(1, 45);
+            document.querySelector('#two').innerHTML = ddd[1];
+            let ran3= getRandomInt(1, 45);
+            document.querySelector('#three').innerHTML = ddd[2];
+            let ran4= getRandomInt(1, 45);
+            document.querySelector('#forth').innerHTML = ddd[3];
+            let ran5= getRandomInt(1, 45);
+            document.querySelector('#five').innerHTML = ddd[4];
+            let ran6= getRandomInt(1, 45);
+            document.querySelector('#six').innerHTML = ddd[5];
+            let ran7= getRandomInt(1, 45);
+            document.querySelector('#bonus').innerHTML = ddd[6];
+            m++;
+            document.querySelector('#section').innerHTML +="<p id='history'>"+ m + "번째 " + ddd +"</p>";
+            check();
+        }
+
+        function getRandomInt(min, max) {
+            max = Math.floor(max);
+            min = Math.ceil(min);
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        
+    </script>
+</body>
+</html>

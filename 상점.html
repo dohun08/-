@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+    <style>
+        nav{
+            color: rgb(0, 0, 0);
+            width: 100%;
+            height: 60px;
+            background-color: rgb(255, 225, 0);
+            display: flex;
+            align-items: center;
+        }
+        ul li{
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+        #ul1{font-size: 20px;}
+        #ul1{
+            padding-left: 10px;
+        }
+        a{text-decoration-line: none; color: white;}
+        #ul2 {
+            margin-left: 850px;
+            display: flex;
+            justify-content: end;
+        }
+
+        #list{
+            display: flex;
+            text-decoration-line: none;
+            color: white;
+            background-color: rgb(17, 17, 17);
+            border: 1px solid black;
+            padding: 10px;
+            border-radius: 10px;
+            margin-left: 10px;
+        }
+        a:hover{text-decoration-line: underline;}
+        .logo{
+            color: white;
+            padding-left: 30px;
+            font-family: "Do Hyeon", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 40px;
+        }
+        #container{
+            position: relative;
+        }
+        #box1{
+            position: absolute;
+            top: 100px;
+            left: 200px;
+            width: 30%;
+        }
+        #box2{
+            position: absolute;
+            top: 50px;
+            right: 200px;
+            width: 35%;
+        }
+        form{
+            border: 1px solid black;
+            border-radius: 10px;
+        }
+        #box2 form ul li{
+            background-color: rgb(255, 255, 255);
+        }
+        #ulbox{
+            position: relative;
+        }
+        #ulbox span{
+            position: absolute;
+            font-size: 20px;
+        }
+        .span1{top: 10px; right: 80px;}
+        .span2{top: 85px; right: 80px;}
+        .span3{top: 160px; right: 80px;}
+        .span4{top: 230px; right: 80px;}
+        .span5{top: 305px; right: 80px;}
+        .span6{top: 370px; right: 80px;}
+        #ulbox p{
+            background-color: rgb(255, 225, 0);
+            width: 85%;
+            padding: 10px;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <p class="logo">번호 추첨기!!</p>
+        <ul id="ul1">
+            <li><a href="로또추첨.html" style="color: black;">로또 번호 뽑기</a></li>
+        </ul>
+        
+        <ul id="ul2">
+            <li id="list"><a href="#" onclick="re()">로그아웃</a></li>
+        </ul>
+    </nav>
+    <section id="container">
+        <article id="box1">
+            <img src="상점주인.jpg" width="100%">
+        </article>
+        <article id="box2">
+            <form>
+                <h1 style="text-align: center; font-size: 30px;">상점</h1>
+                <hr>
+                <ul id="ulbox">
+                    <p>문화상품권 1000원</p>
+                    <span class="span1">가격 : 100px    <a href="#" onclick="zz()" style="color: black;">구매</a></span>
+                    <p>문화상품권 5000원</p>
+                    <span class="span2">가격 : 1000px    <a href="#"onclick="zz()" style="color: black;">구매</a></span>
+                    <p>병준쌤과의 헬스</p>
+                    <span class="span3">가격 : 100px    <a href="#"onclick="zz()" style="color: black;">구매</a></span>
+                    <p>허동운의 연애 강의</p>
+                    <span class="span4">가격 : 100px    <a href="#"onclick="zz()" style="color: black;">구매</a></span>
+                    <p>민아쌤과 식사</p>
+                    <span class="span5">가격 : 100px    <a href="#"onclick="zz()" style="color: black;">구매</a></span>
+                    <p>민하쌤의 첫사랑 이야기</p>
+                    <span class="span6">가격 : 100px    <a href="#"onclick="zz()" style="color: black;">구매</a></span>
+                </ul>
+            </form>
+        </article>
+    </section>
+    <script>
+        function re(){
+            if(confirm("로그아웃 하시겠습니까?")){
+                location.href = "로그인.html";
+            }
+        }
+        function zz(){
+            alert('해당 상품은 준비중입니다.(확정x)');
+        }
+    </script>
+
+</body>
+</html>

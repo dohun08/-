@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            width: 35%;
+            margin: 0px auto;
+            border: 1px solid black;
+            border-radius: 20px;
+        }
+        #box{
+            width: 90%;
+            margin: 0px auto;
+        }
+        ul li{list-style: none;}
+        #box form p input{font-size: 20px;}
+        #box form p{font-size: 20px;}
+        #submit{padding: 8px 15px; background-color: white; border-radius: 10px; margin-bottom: 15px;}
+        #submit:hover{background-color: rgb(231, 231, 231);}
+        #submit:active{background-color: rgb(213, 213, 213);}
+    </style>
+</head>
+<body >
+    <section id="container">
+        <article id="box">
+            <form>
+                <h1 style="font-size: 30px;">로그인</h1>
+                    <p>아이디 : <input type="text" id="id"></p>
+                    <p>비밀번호 : <input type="password" id="pw"></p>
+                    <p style="color: red;">오늘의 질문~~</p>
+                    <p>나는 오늘 운수가 좋은것같다 yes <input type="radio" name="answer"> no <input type="radio" name="answer"></p>
+                    <p>나는 오늘도 도박에 빠질 준비가되어있다 yes <input type="radio" name="answer2"> no <input type="radio" name="answer2"></p>
+                    <input id="submit" type="button"  value="로그인  --->" onclick="login()">
+                
+            </form>
+        </article>
+        
+    </section>
+    <script>
+        function login(){
+            const id = document.querySelector('#id');
+            const pw = document.querySelector('#pw');
+            if(id.value == "" || pw.value == ""){
+                alert("값이 비어져있습니다.");
+            }
+            else{
+                if(id.value==="dohun" && pw.value==="1234"){
+                    location.href='로또추첨.html';
+                }
+                else{
+                    alert("정보가 일치하지 않습니다.");
+                }
+            }
+        }
+    </script>
+</body>
+</html>
